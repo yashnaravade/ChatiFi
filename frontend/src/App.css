@@ -1,0 +1,36 @@
+
+body{
+    background-color: #f5f5f5;
+    
+}
+.container{
+  overflow-y: auto;
+
+}
+
+.chat-container{
+  /* overflow-y: auto; */
+  height: calc(100vh - 100px);
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  
+
+}
+
+.myclass{
+  background-color: rgb(254, 254, 254);
+  /* width: 400px; */
+  clear: both;
+  border-radius: 5px;
+  padding: 10px;
+  margin: auto;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.myclass:hover{
+  background-color: rgb(230, 230, 230);
+
+}
+ 
+ 
