@@ -16,14 +16,14 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get("http://localhost:5000/message");
+      const response = await axios.get("/message");
       setData(response.data);
     }
     fetchData();
   }, [fetchTrigger]);
 
   function sendMessage() {
-    axios.post("http://localhost:5000/message", {
+    axios.post("/message", {
       user: currentUser,
       messageType: "text",
       messageBody: currentMessage,
