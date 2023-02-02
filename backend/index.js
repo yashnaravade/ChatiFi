@@ -1,19 +1,25 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const messageModel = require("./module/message");
+import dotenv from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import messageModel from "./module/message.js";
 
-const PORT = 5000;
+dotenv.config();
+
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://vaibhavi:vaibhavi@learnmongodb.eluyb.mongodb.net/?retryWrites=true&w=majority",
-  () => {
-    console.log("connected to mongodb");
+const MONGODB_URL = process.env.MONGODB_URL;
+
+mongoose.connect(MONGODB_URL, (err) => {
+  if (err) {
+    console.log("Error connecting to MongoDB");
+  } else {
+    console.log("Connected to MongoDB");
   }
-);
+});
 
 app.get("/health", (req, res) => {
   res.json({
@@ -22,10 +28,6 @@ app.get("/health", (req, res) => {
 });
 
 app.post("/message", async (req, res) => {
-  // const user = req.body.user;
-  // const messageType = req.body.messageType;
-  // const messageBody = req.body.messageBody;
-
   const { user, messageType, messageBody } = req.body;
 
   const newMessage = new messageModel({
