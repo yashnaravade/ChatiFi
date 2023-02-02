@@ -15,7 +15,7 @@ body {
 
 .myclass {
   background-color: rgb(254, 254, 254);
-  /* width: 400px; */
+  width: 50%;
   clear: both;
   border-radius: 5px;
   padding: 10px;
@@ -25,4 +25,30 @@ body {
 
 .myclass:hover {
   background-color: rgb(230, 230, 230);
+}
+
+.current-user {
+  font-family: "Roboto", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #22211f;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+button {
+  width: 20%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: #f5f5f5;
 }

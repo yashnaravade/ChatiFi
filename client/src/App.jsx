@@ -59,7 +59,7 @@ function App() {
             <center>
               <b>
                 <br />
-                current user:
+                <p className="current-user">Current User</p>
               </b>{" "}
               {currentUser}
             </center>
