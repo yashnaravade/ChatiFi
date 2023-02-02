@@ -16,14 +16,16 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get("/message");
+      // const response = await axios.get("/message");
+      const response = await axios.get("https://chati-fi.vercel.app/message");
       setData(response.data);
     }
     fetchData();
   }, [fetchTrigger]);
 
   function sendMessage() {
-    axios.post("/message", {
+    // axios.post("/message", {
+      axios.post("https://chati-fi.vercel.app/message", {
       user: currentUser,
       messageType: "text",
       messageBody: currentMessage,
